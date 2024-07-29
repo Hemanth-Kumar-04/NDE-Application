@@ -23,18 +23,78 @@ const Navbar = () => {
   };
 
   const products = [
-    { href: "/product1", imgSrc: "/path/to/image1.jpg", title: "Domain", line1: "Purchase & manage your own domain." },
-    { href: "/product2", imgSrc: "/path/to/image2.jpg", title: "Google Workspace", line1: "Acquire & efficiently manage your workspace." },
-    { href: "/product3", imgSrc: "/path/to/image3.jpg", title: "Vision Now", line1: "Powerful Customer management tools." },
-    { href: "/product4", imgSrc: "/path/to/image4.jpg", title: "Spot Now", line1: "Employee tracking tool for efficient workforce." },
-    { href: "/product5", imgSrc: "/path/to/image5.jpg", title: "Hosting", line1: "Obtain & oversee your hosting solution." },
-    { href: "/product6", imgSrc: "/path/to/image6.jpg", title: "NDE Mail", line1: "Connect & optimize your email communication." },
-    { href: "/product7", imgSrc: "/path/to/image7.jpg", title: "Chat Now", line1: "Connect and Engage with real-time chat support." },
-    { href: "/product8", imgSrc: "/path/to/image8.jpg", title: "Peoples Now", line1: "Manage your employee details." },
-    { href: "/product9", imgSrc: "/path/to/image9.jpg", title: "Marketing Planner", line1: "Connect & optimize your email communication." },
-    { href: "/product10", imgSrc: "/path/to/image10.jpg", title: "Google Ads", line1: "Acquire & efficiently manage your workspace." },
-    { href: "/product11", imgSrc: "/path/to/image11.jpg", title: "Social Media Ads", line1: "Obtain & oversee your hosting solution." },
-    { href: "/product12", imgSrc: "/path/to/image12.jpg", title: "Mails Now", line1: "Purchase & manage your own domain." },
+    {
+      href: "/product1",
+      imgSrc: "/path/to/image1.jpg",
+      title: "Domain",
+      line1: "Purchase & manage your own domain.",
+    },
+    {
+      href: "/product2",
+      imgSrc: "/path/to/image2.jpg",
+      title: "Google Workspace",
+      line1: "Acquire & efficiently manage your workspace.",
+    },
+    {
+      href: "/product3",
+      imgSrc: "/path/to/image3.jpg",
+      title: "Vision Now",
+      line1: "Powerful Customer management tools.",
+    },
+    {
+      href: "/product4",
+      imgSrc: "/path/to/image4.jpg",
+      title: "Spot Now",
+      line1: "Employee tracking tool for efficient workforce.",
+    },
+    {
+      href: "/product5",
+      imgSrc: "/path/to/image5.jpg",
+      title: "Hosting",
+      line1: "Obtain & oversee your hosting solution.",
+    },
+    {
+      href: "/product6",
+      imgSrc: "/path/to/image6.jpg",
+      title: "NDE Mail",
+      line1: "Connect & optimize your email communication.",
+    },
+    {
+      href: "/product7",
+      imgSrc: "/path/to/image7.jpg",
+      title: "Chat Now",
+      line1: "Connect and Engage with real-time chat support.",
+    },
+    {
+      href: "/product8",
+      imgSrc: "/path/to/image8.jpg",
+      title: "Peoples Now",
+      line1: "Manage your employee details.",
+    },
+    {
+      href: "/product9",
+      imgSrc: "/path/to/image9.jpg",
+      title: "Marketing Planner",
+      line1: "Connect & optimize your email communication.",
+    },
+    {
+      href: "/product10",
+      imgSrc: "/path/to/image10.jpg",
+      title: "Google Ads",
+      line1: "Acquire & efficiently manage your workspace.",
+    },
+    {
+      href: "/product11",
+      imgSrc: "/path/to/image11.jpg",
+      title: "Social Media Ads",
+      line1: "Obtain & oversee your hosting solution.",
+    },
+    {
+      href: "/product12",
+      imgSrc: "/path/to/image12.jpg",
+      title: "Mails Now",
+      line1: "Purchase & manage your own domain.",
+    },
   ];
 
   return (
@@ -57,20 +117,69 @@ const Navbar = () => {
                   <Image src={ICONS.drop} alt="Dropdown icon" />
                 </div>
                 {isDropdownOpen && (
-                  <div className="absolute left-[-300%] right-0 mt-2 bg-white border border-gray-300 rounded shadow-lg z-50 w-[1180px] p-4">
-                    <div className="grid grid-cols-3 gap-4">
-                      {products.map((product, index) => (
-                        <ProductLink
-                          key={index}
-                          href={product.href}
-                          imgSrc={product.imgSrc}
-                          title={product.title}
-                          line1={product.line1}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                )}
+  <div className="fixed left-0 right-0 top-[80px] mt-2 bg-white border border-gray-300 rounded shadow-lg z-50 w-full h-[43vh] p-4 overflow-y-auto">
+    <div className="grid grid-cols-3 gap-4">
+      <div>
+        <h3 className="font-semibold mb-2">Build</h3>
+        {products.filter((_, index) => [0, 1].includes(index)).map((product, index) => (
+          <ProductLink
+            key={index}
+            href={product.href}
+            imgSrc={product.imgSrc}
+            title={product.title}
+            line1={product.line1}
+          />
+        ))}
+        <h3 className="font-semibold mb-2 mt-4">Manage</h3>
+        {products.filter((_, index) => [2, 3].includes(index)).map((product, index) => (
+          <ProductLink
+            key={index}
+            href={product.href}
+            imgSrc={product.imgSrc}
+            title={product.title}
+            line1={product.line1}
+          />
+        ))}
+      </div>
+      <div >
+        {products.filter((_, index) => [4, 5].includes(index)).map((product, index) => (
+          <ProductLink
+            key={index}
+            href={product.href}
+            imgSrc={product.imgSrc}
+            title={product.title}
+            line1={product.line1}
+          />
+        ))}
+        {products.filter((_, index) => [6, 7].includes(index)).map((product, index) => (
+          <ProductLink
+            key={index}
+            href={product.href}
+            imgSrc={product.imgSrc}
+            title={product.title}
+            line1={product.line1}
+          />
+        ))}
+      </div>
+      <div>
+        <h3 className="font-semibold mb-2">Grow</h3>
+        {products.filter((_, index) => [8, 9, 10, 11].includes(index)).map((product, index) => (
+          <ProductLink
+            key={index}
+            href={product.href}
+            imgSrc={product.imgSrc}
+            title={product.title}
+            line1={product.line1}
+          />
+        ))}
+      </div>
+    </div>
+    <div className="absolute top-0 right-0 mt-2 mr-2">
+      <img src="/path/to/your/image.jpg" alt="Description of image" className="w-full h-full object-cover" />
+    </div>
+  </div>
+)}
+
               </div>
               <div className="flex gap-2">
                 <span>Resources</span>
